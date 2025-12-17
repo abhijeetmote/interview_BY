@@ -1,7 +1,15 @@
 # FastAPI Financial Time-Series Endpoints Design
  
 ## Overview
- 
+
+# Test ingest
+```curl -X POST http://localhost:8000/v1/trades/ingest \
+  -H "Content-Type: application/json" \
+  -d '{"trades":[{"timestamp":"2025-01-02T09:30:00Z","symbol":"AAPL","price":190.5,"volume":1000}]}'
+```
+# Test OHLCV
+```curl "http://localhost:8000/v1/stats/ohlc?symbol=AAPL"```
+
 Design two FastAPI endpoints for processing financial time-series CSV data with the following schema:
  
 - `timestamp`
